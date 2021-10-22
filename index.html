@@ -5,39 +5,51 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles.css">
-  <title>Document</title>
+  <title>Whisby - Frontend Technical Test</title>
 </head>
 <body>
   <div class="slider-container">
     <div class="slider-images">
       <div class="slider-text-index">1 / 4</div>
-      <img src="./images/image1.jpg" alt="">
+      <img src="./images/image1.jpg" alt="two korgis looking at the camera">
     </div>
 
     <div class="slider-images">
       <div class="slider-text-index">2 / 4</div>
-      <img src="./images/image2.jpg" alt="">
+      <img src="./images/image2.jpg" alt="four dogs sitting on a walk">
     </div>
 
     <div class="slider-images">
       <div class="slider-text-index">3 / 4</div>
-      <img src="./images/image3.jpg" alt="">
+      <img src="./images/image3.jpg" alt="two dogs playing">
     </div>
     
     <div class="slider-images">
-      <div class="slider-text-index">3 / 4</div>
-      <img src="./images/image4.jpg" alt="">
+      <div class="slider-text-index">4 / 4</div>
+      <img src="./images/image4.jpg" alt="dog licks its nose while looking at camera">
     </div>
 
-    <button class="slider-button prev" onclick="moveSlider(-1)">&#10094;</button>
-    <button class="slider-button next" onclick="moveSlider(1)">&#10095;</button>
+    <button class="slider-button prev" onclick="moveSlider(-1)">&#8592;</button>
+    <button class="slider-button next" onclick="moveSlider(1)">&#8594;</button>
   </div>
   <div class="dots-container">
-    <span class="dots">X</span>
-    <span class="dots">X</span>
-    <span class="dots">X</span>
-    <span class="dots">X</span>
+    <span class="dots">&#9679;</span>
+    <span class="dots">&#9679;</span>
+    <span class="dots">&#9679;</span>
+    <span class="dots">&#9679;</span>
   </div>
+  <br>
+  <div class="search-container">
+    <h3>Github repository search</h3>
+    <form class="user-search-form">
+      <input type="text" name="username">
+      <button class="user-search-button">Search</button>
+    </form>
+    <div class="search-results">
+      
+    </div>
+  </div>
+
   <script src="./index.js"></script>
 </body>
 </html>
