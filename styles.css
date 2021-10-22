@@ -14,19 +14,13 @@ body{
 }
 
 main{
-  max-width: 60%;
+  max-width: 60vw;
   margin: auto;
 
 }
 
-h1{
-  margin-top: 5px;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 900;
-}
-
 .slider-container{
+  margin-top: 2rem;
   position: relative;
   width: 100%;
 }
@@ -73,27 +67,49 @@ img{
 
 .search-container{
   display: flex;
-  /* flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
 }
 
+.search-container h3{
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.589);
+}
+
 .user-search-form{
   display: flex;
   justify-content: center;
+  margin-bottom: 0.5rem;
 }
 
 .user-search-form input {
   padding: 1vh;
   width: 30vw;
+  border-radius: 5px;
+  border: none;
+  margin-right: 0.5rem;
+}
+.user-search-form input:hover {
+  border-radius: 1px;
+  border: 1px solid rgba(0, 0, 0, 0.582);
+  transition: 2s ease;
 }
 
-/* .user-search-form button {
-  padding: 0 20px 0 20px;
-} */
+.user-search-button{
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.637);
+}
+
+.user-search-button:hover{
+  border-radius: 1px;
+  border: 1px solid rgba(0, 0, 0, 0.493);
+  background-color: white;
+  transition: 0.9s ease;
+}
 
 .search-results{
   display: flex;
@@ -106,11 +122,17 @@ img{
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 10px;
-  margin-top: 15px;
+  margin-top: 0.7rem;
+  margin-bottom: 15px;
   word-break: break-all;
   flex-grow: 1;
   background-color: white;
   text-align: center;
+}
+
+.repository:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 20px 20px 25px;
+  transition: 0.7s ease;
 }
 
 .repository a{
@@ -129,13 +151,12 @@ img{
 .repository p{
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: rgba(0, 0, 0, 0.575);
 }
 
 /* Media queries for a better responsiveness */
 @media only screen and (max-width: 564px) {
-  h1{
-    font-size: 1rem;
-  }
+
 
   h3{
     font-size: 0.8rem;
@@ -149,9 +170,7 @@ img{
 }
 
 @media only screen and (max-width: 360px) {
-  h1 {
-    font-size: 0.8rem;
-  }
+
   .dots {
     font-size: 10px;
   }

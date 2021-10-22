@@ -1,5 +1,6 @@
 let imageIndex = 1
 
+// Add functionalities to arrow buttons
 const [leftButton, rightButton] = document.getElementsByClassName('slider-button')
 leftButton.addEventListener('click', (() => moveSlider(-1)))
 rightButton.addEventListener('click', (() => moveSlider(+1)))
@@ -9,16 +10,6 @@ const moveSlider = (factor) => {
   imageIndex += factor
   slideHandler(imageIndex)
 }
-// const changeSlide = (index) => {
-//   imageIndex = index + 1
-//   slideHandler(imageIndex)
-// }
-// for (let i = 0; i < sliderDots.length; i++) {
-//   sliderDots[i].classList.remove('active')
-//   // sliderDots[i].addEventListener('click', () => changeSlide(i))
-// }
-
-
 
 const slideHandler = (index) => {
   const sliderDots = document.getElementsByClassName('dots')
@@ -52,11 +43,17 @@ const handleDom = (repos=[]) => {
   const [resultsContainer] = document.getElementsByClassName('search-results')
   resultsContainer.replaceChildren()
 
-  // If no user found, display a message
+  // If no user wasn't found or has no public repos, display a message
   if (repos === 404) {
     const notFound = document.createElement('p')
     notFound.innerHTML = 'User not found. Please try again with another username'
     resultsContainer.append(notFound)
+    return
+  }
+  if (repos.length === 0) {
+    const noRepos = document.createElement('p')
+    notFound.innerHTML = 'This user has no public repository available'
+    resultsContainer.append(noRepos)
     return
   }
 
