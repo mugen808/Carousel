@@ -1,0 +1,28 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+img{
+  vertical-align: middle;
+}
+.slider-container{
+  width: 75%;
+  margin: auto;
+}
+
+.dots-container{
+  text-align: center;
+}
+.dots{
+  cursor: pointer;
+}
+
+.active{
+  color: red;
+}
