@@ -31,7 +31,9 @@ img{
 }
 
 .dots-container{
+  margin-top: 0.5rem;
   text-align: center;
+  cursor: default;
 }
 .dots{
   font-size: 1.2rem;
@@ -72,7 +74,7 @@ img{
   align-items: center;
 }
 
-.search-container h3{
+.search-container h2{
   margin-bottom: 1rem;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.589);
@@ -158,7 +160,7 @@ img{
 @media only screen and (max-width: 564px) {
 
 
-  h3{
+  h2{
     font-size: 0.8rem;
   }
   .dots {
