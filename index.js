@@ -1,7 +1,5 @@
 let imageIndex = 1
 
-
-
 const moveSlider = (factor) => {
   imageIndex += factor
   slideHandler(imageIndex)
@@ -14,7 +12,6 @@ const moveSlider = (factor) => {
 //   sliderDots[i].classList.remove('active')
 //   // sliderDots[i].addEventListener('click', () => changeSlide(i))
 // }
-
 
 const slideHandler = (index) => {
   const sliderDots = document.getElementsByClassName('dots')
@@ -33,18 +30,33 @@ const slideHandler = (index) => {
   sliderDots[imageIndex - 1].classList.add('active')
   slides[imageIndex - 1].style.display = 'block'
 }
-
 slideHandler(imageIndex)
+
 
 const [form] = document.getElementsByClassName('user-search-form')
 const [userToSearch] = document.getElementsByName('username')
-const [resultsContainer] = document.getElementsByClassName('search-results')
+
 const url = `https://api.github.com/users/${userToSearch.value}`
+
+const handleDom = (repos) => {
+  const [resultsContainer] = document.getElementsByClassName('search-results')
+  repos.map(repo => {
+    const {name} = repo
+    const {html_url} = repo
+    const list = document.createElement('ul')
+    const repoName = document.createElement('li')
+    repoName.innerHTML = name
+    const repoLink = document.createElement('li')
+    repoLink.innerHTML = html_url
+    list.append(repoName, repoLink)
+    resultsContainer.append(list)
+  })
+}
 
 const handleRepos = async () => {
   const response = await fetch(`${url}/repos`)
   const data = await response.json()
-  console.log('repos: ', data)
+  handleDom(data)
 }
 
 const handleSearch = async (e) => {
@@ -52,7 +64,6 @@ const handleSearch = async (e) => {
   const response = await fetch(url)
   const {public_repos} = await response.json()
   if (public_repos > 0) {
-    console.log('greater')
     handleRepos()
   }
 }
